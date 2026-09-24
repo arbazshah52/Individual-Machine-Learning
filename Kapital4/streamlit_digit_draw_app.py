@@ -66,7 +66,7 @@ def canvas_to_mnist_vector(canvas_image: np.ndarray, scaler: StandardScaler) -> 
     return scaler.transform(vec), preview
 
 
-st.title("Draw a digit, and the model will recognize it live!")
+st.title("Kapital 4 Draw a digit, and the model will recognize it live!")
 st.write(
     "Draw a single digit (0-9) below with your mouse. The prediction and the "
     "probability chart update automatically after every stroke -- no button "

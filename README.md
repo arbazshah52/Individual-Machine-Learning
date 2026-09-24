@@ -1,5 +1,5 @@
 # Individual-Machine-Learning
-Kapitel 1 - Kapitel 6
+### Kapitel 1 - Kapitel 6
 ## Kapital 4
 
 ![Draw a 5](Kapital4/draw1.png)

@@ -6,6 +6,7 @@ Run with:
     streamlit run streamlit_digit_draw_app.py
     py -3.14 -m streamlit run streamlit_digit_draw_app.py
 """
+import os
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -16,7 +17,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import ExtraTreesClassifier
 
 st.set_page_config(page_title="Draw a digit", layout="wide")
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MNIST_CSV_PATH = os.path.join(BASE_DIR, "mnist_10k.csv")
 
 @st.cache_resource
 def train_model():
@@ -33,10 +35,6 @@ def train_model():
 
 
 def canvas_to_mnist_vector(canvas_image: np.ndarray, scaler: StandardScaler) -> tuple[np.ndarray, Image.Image]:
-    """Turn the canvas's RGBA drawing into a scaled, MNIST-shaped (1, 784)
-    feature vector, plus a small preview image of what will actually be fed
-    to the model. Assumes a dark stroke drawn on a light canvas background
-    (the app's default settings below)."""
     # The canvas gives RGBA; convert to a single grayscale brightness channel.
     img = Image.fromarray(canvas_image.astype(np.uint8), mode="RGBA").convert("L")
 

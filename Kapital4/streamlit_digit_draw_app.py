@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 @st.cache_resource
 def train_model():
-    mnist_df = pd.read_csv("mnist_10k.csv", header=None)
+    mnist_df = pd.read_csv(os.path.join(BASE_DIR, "mnist_10k.csv"), header=None)
     y = mnist_df.iloc[:, 0].to_numpy().astype(np.uint8)
     X = mnist_df.iloc[:, 1:].to_numpy().astype(np.float64)
 

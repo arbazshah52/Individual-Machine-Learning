@@ -18,7 +18,6 @@ from sklearn.ensemble import ExtraTreesClassifier
 
 st.set_page_config(page_title="Draw a digit", layout="wide")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-mnist_df = pd.read_csv(MNIST_CSV_PATH, header=None)
 
 @st.cache_resource
 def train_model():
